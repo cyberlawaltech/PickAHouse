@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Convert oklch to hsl for LightningCSS compatibility */
+  /* eBay-inspired color palette - Clean blues and whites */
+  --background: hsl(0 0% 99%);
+  --foreground: hsl(220 15% 15%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(220 15% 15%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(220 15% 15%);
+  --primary: hsl(221 89% 50%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(220 10% 96%);
+  --secondary-foreground: hsl(220 12% 25%);
+  --muted: hsl(220 10% 96%);
+  --muted-foreground: hsl(220 8% 45%);
+  --accent: hsl(220 10% 96%);
+  --accent-foreground: hsl(220 15% 15%);
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(220 8% 90%);
+  --input: hsl(220 8% 92%);
+  --ring: hsl(221 89% 50%);
+  --chart-1: hsl(221 89% 50%);
+  --chart-2: hsl(160 45% 50%);
+  --chart-3: hsl(230 25% 50%);
+  --chart-4: hsl(45 75% 65%);
+  --chart-5: hsl(25 70% 55%);
+  --radius: 0.5rem;
+  --sidebar: hsl(220 10% 98%);
+  --sidebar-foreground: hsl(220 15% 15%);
+  --sidebar-primary: hsl(221 89% 50%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(220 10% 95%);
+  --sidebar-accent-foreground: hsl(220 15% 15%);
+  --sidebar-border: hsl(220 8% 90%);
+  --sidebar-ring: hsl(221 89% 50%);
+
+  /* eBay brand colors */
+  --ebay-blue: hsl(221 89% 50%);
+  --ebay-blue-hover: hsl(221 92% 45%);
+  --ebay-red: hsl(0 72% 51%);
+  --ebay-yellow: hsl(45 95% 55%);
+  --ebay-green: hsl(145 60% 40%);
+}
+
+.dark {
+  --background: hsl(220 15% 10%);
+  --foreground: hsl(220 10% 95%);
+  --card: hsl(220 15% 14%);
+  --card-foreground: hsl(220 10% 95%);
+  --popover: hsl(220 15% 14%);
+  --popover-foreground: hsl(220 10% 95%);
+  --primary: hsl(221 89% 60%);
+  --primary-foreground: hsl(220 15% 10%);
+  --secondary: hsl(220 12% 20%);
+  --secondary-foreground: hsl(220 10% 95%);
+  --muted: hsl(220 12% 20%);
+  --muted-foreground: hsl(220 8% 65%);
+  --accent: hsl(220 12% 28%);
+  --accent-foreground: hsl(220 10% 95%);
+  --destructive: hsl(0 65% 45%);
+  --destructive-foreground: hsl(220 10% 95%);
+  --border: hsl(220 12% 26%);
+  --input: hsl(220 12% 23%);
+  --ring: hsl(221 89% 60%);
+  --sidebar: hsl(220 15% 12%);
+  --sidebar-foreground: hsl(220 10% 95%);
+  --sidebar-primary: hsl(221 89% 60%);
+  --sidebar-primary-foreground: hsl(220 10% 95%);
+  --sidebar-accent: hsl(220 12% 20%);
+  --sidebar-accent-foreground: hsl(220 10% 95%);
+  --sidebar-border: hsl(220 12% 23%);
+  --sidebar-ring: hsl(220 8% 45%);
+}
+
+@theme inline {
+  --font-sans: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-serif: "Georgia", serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-ebay-blue: var(--ebay-blue);
+  --color-ebay-blue-hover: var(--ebay-blue-hover);
+  --color-ebay-red: var(--ebay-red);
+  --color-ebay-yellow: var(--ebay-yellow);
+  --color-ebay-green: var(--ebay-green);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* eBay-style animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.3s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.04) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+}
+
+.preloader-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* eBay-style property cards */
+.property-card {
+  transition: box-shadow 0.2s ease;
+}
+
+.property-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.property-card:hover .property-image {
+  transform: scale(1.02);
+}
+
+.property-image {
+  transition: transform 0.3s ease;
+}
+
+/* Floating button styles */
+.floating-btn {
+  position: fixed;
+  z-index: 50;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Touch targets */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Category circle hover */
+.category-circle {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.category-circle:hover {
+  transform: translateY(-4px);
+}
+
+/* Live badge pulse */
+@keyframes pulse-live {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.live-badge {
+  animation: pulse-live 2s ease-in-out infinite;
+}
+
+/* eBay promotional banner gradient */
+.promo-banner {
+  background: linear-gradient(135deg, #3665f3 0%, #0654ba 100%);
+}
