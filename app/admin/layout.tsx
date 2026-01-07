@@ -2,8 +2,8 @@
 
 import type React from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Suspense } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import { Suspense, useEffect, useState } from "react"
 import {
   LayoutDashboard,
   Building2,
@@ -33,6 +33,8 @@ import {
   SidebarTrigger,
   SidebarInset,
 } from "@/components/ui/sidebar"
+import { getCurrentUser, logout } from "@/lib/auth"
+import type { AuthUser } from "@/lib/auth"
 
 const adminNavItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
@@ -46,6 +48,39 @@ const adminNavItems = [
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
+  const router = useRouter()
+  const [user, setUser] = useState<AuthUser | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const currentUser = getCurrentUser()
+    if (!currentUser || currentUser.role !== "admin") {
+      router.push("/signin")
+      return
+    }
+    setUser(currentUser)
+    setIsLoading(false)
+  }, [router])
+
+  const handleLogout = () => {
+    logout()
+    router.push("/")
+  }
+
+  if (isLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full border-4 border-border border-t-primary h-12 w-12 mb-4" />
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (!user) {
+    return null
+  }
 
   return (
     <SidebarProvider>
@@ -87,7 +122,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     Back to Site
                   </Button>
                 </Link>
-                <Button variant="ghost" size="sm" className="w-full justify-start gap-2 h-9 text-ebay-red">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start gap-2 h-9 text-ebay-red hover:text-ebay-red"
+                  onClick={handleLogout}
+                >
                   <LogOut className="w-4 h-4" />
                   Sign Out
                 </Button>
@@ -118,7 +158,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-ebay-red rounded-full" />
                 </Button>
                 <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-sm font-medium">
-                  A
+                  {user.name.charAt(0).toUpperCase()}
                 </div>
               </div>
             </header>
