@@ -18,6 +18,12 @@ const footerLinks = {
     { label: "Serviced Apartments", href: "/properties?type=flat" },
     { label: "Office Space", href: "/properties?type=commercial&status=for-rent" },
   ],
+  aiServices: [
+    { label: "AI Agents", href: "/ai-agents" },
+    { label: "Workflows", href: "/ai-agents/workflows" },
+    { label: "Property Recommendation", href: "/ai-agents/property-recommendation" },
+    { label: "Market Analysis", href: "/ai-agents/market-analysis" },
+  ],
   aboutUs: [
     { label: "Company Info", href: "/about" },
     { label: "Our Team", href: "/team" },
@@ -44,7 +50,7 @@ export function Footer() {
     <footer className="bg-secondary border-t border-border">
       {/* Main footer */}
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
           {/* Buy column */}
           <div>
             <h4 className="font-bold text-sm mb-3 text-foreground">Buy</h4>
@@ -64,6 +70,19 @@ export function Footer() {
             <h4 className="font-bold text-sm mb-3 text-foreground">Rent</h4>
             <ul className="space-y-2">
               {footerLinks.rent.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-xs text-muted-foreground hover:text-primary hover:underline">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-sm mb-3 text-foreground">AI Services</h4>
+            <ul className="space-y-2">
+              {footerLinks.aiServices.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-xs text-muted-foreground hover:text-primary hover:underline">
                     {link.label}
@@ -102,7 +121,7 @@ export function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="col-span-2 sm:col-span-4 lg:col-span-1">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <h4 className="font-bold text-sm mb-3 text-foreground">Stay Connected</h4>
             <p className="text-xs text-muted-foreground mb-3">Get the latest listings in your inbox</p>
             <div className="flex gap-2">

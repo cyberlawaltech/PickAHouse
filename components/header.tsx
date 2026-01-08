@@ -18,6 +18,7 @@ import {
   ShoppingCart,
   ChevronDown,
   HelpCircle,
+  Zap,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -37,6 +38,7 @@ const navItems = [
   { href: "/new-projects", label: "New Projects", icon: Building2 },
   { href: "/commercial", label: "Commercial", icon: Briefcase },
   { href: "/agents", label: "Find Agent", icon: Users },
+  { href: "/ai-agents", label: "AI Agents", icon: Zap },
 ]
 
 export function Header() {
@@ -94,6 +96,13 @@ export function Header() {
             </Link>
             <Link href="/sell" className="hover:text-primary transition-colors font-medium">
               Sell
+            </Link>
+            <Link
+              href="/ai-agents"
+              className="hover:text-primary transition-colors font-medium flex items-center gap-1"
+            >
+              <Zap className="w-3 h-3" />
+              AI Agents
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 hover:text-primary transition-colors">
@@ -183,6 +192,13 @@ export function Header() {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/properties?type=hostel">Hostels</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link href="/ai-agents" className="flex items-center gap-2">
+                    <Zap className="w-4 h-4" />
+                    AI Agents
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>

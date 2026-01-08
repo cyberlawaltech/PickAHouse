@@ -17,6 +17,7 @@ import {
   Home,
   Search,
   HelpCircle,
+  Zap,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -43,6 +44,7 @@ const adminNavItems = [
   { href: "/admin/messages", label: "Messages", icon: MessageSquare },
   { href: "/admin/analytics", label: "Analytics", icon: BarChart3 },
   { href: "/admin/reports", label: "Reports", icon: FileText },
+  { href: "/admin/llm-settings", label: "AI Configuration", icon: Zap },
   { href: "/admin/settings", label: "Settings", icon: Settings },
 ]
 
