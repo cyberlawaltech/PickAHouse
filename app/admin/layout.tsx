@@ -36,6 +36,7 @@ import {
 } from "@/components/ui/sidebar"
 import { getCurrentUser, logout } from "@/lib/auth"
 import type { AuthUser } from "@/lib/auth"
+import { AskAIButton } from "@/components/ask-ai-button"
 
 const adminNavItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
@@ -169,6 +170,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <main className="flex-1 p-4 sm:p-6 bg-secondary/30">{children}</main>
           </SidebarInset>
         </div>
+        <AskAIButton />
       </Suspense>
     </SidebarProvider>
   )
