@@ -4,6 +4,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { PropertyDetails } from "@/components/property-details"
 import { FloatingMessenger } from "@/components/floating-messenger"
+import { VoiceIndicator } from "@/components/voice-indicator"
 
 interface PropertyPageProps {
   params: Promise<{ id: string }>
@@ -45,6 +46,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
+      <VoiceIndicator isListening={true} status="idle" />
       <main className="flex-1">
         <PropertyDetails property={property} />
       </main>

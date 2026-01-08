@@ -29,6 +29,10 @@ import type { Property } from "@/lib/types"
 import { formatPrice, getStatusLabel, getPropertyTypeLabel } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import { PropertyInquiryForm } from "./property-inquiry-form"
+import { VoiceModeToggle } from "./voice-mode-toggle"
+import { VoicePropertyController } from "./voice-property-controller"
+import { VoiceStream } from "@/lib/voice-stream"
+import { parseVoiceCommand } from "@/lib/voice-commands"
 
 interface PropertyDetailsProps {
   property: Property
@@ -49,7 +53,79 @@ export function PropertyDetails({ property }: PropertyDetailsProps) {
   const [hasSpoken, setHasSpoken] = useState(false)
   const speechRef = useRef<SpeechSynthesisUtterance | null>(null)
 
-  // ... existing AI voice code ...
+  const [isAutoMode, setIsAutoMode] = useState(true)
+  const [isListening, setIsListening] = useState(false)
+  const [voiceStatus, setVoiceStatus] = useState<"idle" | "listening" | "processing">("idle")
+  const voiceStreamRef = useRef<VoiceStream | null>(null)
+  const [activeTab, setActiveTab] = useState("description")
+  const [showContactForm, setShowContactForm] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !isAutoMode) return
+
+    const initializeVoice = async () => {
+      try {
+        const voiceStream = new VoiceStream({
+          onTranscript: (text) => {
+            const command = parseVoiceCommand(text)
+            if (command && command.confidence > 0.75) {
+              handleVoiceCommand(command)
+            }
+          },
+          onError: (error) => {
+            console.error("[v0] Voice error:", error)
+            speakResponse(error)
+          },
+          onStateChange: setVoiceStatus,
+        })
+
+        await voiceStream.initialize()
+        voiceStream.start()
+        voiceStreamRef.current = voiceStream
+        setIsListening(true)
+      } catch (error) {
+        console.error("[v0] Voice initialization error:", error)
+      }
+    }
+
+    initializeVoice()
+
+    return () => {
+      if (voiceStreamRef.current) {
+        voiceStreamRef.current.destroy()
+      }
+    }
+  }, [isAutoMode])
+
+  const handleVoiceCommand = (command: any) => {
+    const { executeCommand } = VoicePropertyController({
+      property,
+      onImageNavigate: (dir) => {
+        setCurrentImageIndex((prev) =>
+          dir === "next"
+            ? (prev + 1) % property.images.length
+            : (prev - 1 + property.images.length) % property.images.length,
+        )
+      },
+      onTabChange: setActiveTab,
+      onToggleSave: () => setIsFavorite(!isFavorite),
+      onToggleContact: () => setShowContactForm(true),
+      onVoiceOutput: speakResponse,
+    })
+
+    executeCommand(command)
+  }
+
+  const speakResponse = (text: string) => {
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      window.speechSynthesis.cancel()
+      const utterance = new SpeechSynthesisUtterance(text)
+      utterance.rate = 0.9
+      utterance.volume = isMuted ? 0 : 1
+      window.speechSynthesis.speak(utterance)
+    }
+  }
+
   useEffect(() => {
     if (typeof window !== "undefined" && "speechSynthesis" in window && !hasSpoken) {
       const introduction = generatePropertyIntroduction(property)
@@ -108,7 +184,15 @@ export function PropertyDetails({ property }: PropertyDetailsProps) {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="relative space-y-8">
+      {isAutoMode && (
+        <VoiceModeToggle
+          isAutoMode={isAutoMode}
+          onToggle={setIsAutoMode}
+          isListening={isListening && voiceStatus === "listening"}
+        />
+      )}
+
       {/* Image Gallery */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
         <div className="relative w-full h-96 bg-secondary rounded-lg overflow-hidden group">
@@ -363,12 +447,14 @@ export function PropertyDetails({ property }: PropertyDetailsProps) {
           </motion.div>
 
           {/* Inquiry Form */}
-          <PropertyInquiryForm
-            propertyTitle={property.title}
-            agentName={property.agent.name}
-            agentEmail={property.agent.email}
-            agentPhone={property.agent.phone}
-          />
+          {showContactForm && (
+            <PropertyInquiryForm
+              propertyTitle={property.title}
+              agentName={property.agent.name}
+              agentEmail={property.agent.email}
+              agentPhone={property.agent.phone}
+            />
+          )}
         </div>
       </motion.div>
     </div>
