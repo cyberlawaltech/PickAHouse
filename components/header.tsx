@@ -31,6 +31,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { getCurrentUser, logout } from "@/lib/auth"
 import type { AuthUser } from "@/lib/auth"
+import { AskAIButton } from "@/components/ask-ai-button"
 
 const navItems = [
   { href: "/", label: "Buy", icon: Home },
@@ -168,6 +169,11 @@ export function Header() {
             </div>
           </Link>
 
+          {/* Ask AI button next to logo */}
+          <div className="hidden md:flex">
+            <AskAIButton variant="header" />
+          </div>
+
           {/* Category dropdown */}
           <div className="hidden md:block">
             <DropdownMenu>
@@ -208,6 +214,7 @@ export function Header() {
             </DropdownMenu>
           </div>
 
+          {/* Search bar */}
           <div className="hidden md:flex flex-1 max-w-2xl">
             <div className="flex w-full">
               <div className="relative flex-1">
