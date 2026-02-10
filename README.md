@@ -1,99 +1,11 @@
-<div align="center">
-
-🏠 PICKAHOUSE: THE NEURAL REAL ESTATE PROTOCOL
-Architect: Oluwaseun Lawal
-
-VERSION: 1.0.0-PROTOTYPE | SECURITY STATUS: VULNERABILITY ASSESSMENT PENDING | THEME: AI-AUTOMATED AGENCY
-
-![alt text](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
-
-
-![alt text](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
-
-
-![alt text](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)
-
-
-![alt text](https://img.shields.io/badge/AI-Agentic_Orchestration-FF6600?style=for-the-badge&logo=openai)
-
-</div>
-
-🛰️ 01. MISSION BRIEFING
-
-PickAHouse is a disruptive, high-fidelity real estate marketplace specifically engineered for the Abuja Premier Estates segment. Beyond a simple listing site, this platform is built as an AI-Automated Agency (AAA) node, merging luxury property discovery with Natural Language Processing (NLP) and Autonomous Agentic Workflows.
-
-[!CAUTION]
-CYBER-SECURITY NOTICE: This system is currently in Frontend-Sandbox mode. Authorization layers and Database encryption are scheduled for Phase 1 Deployment.
-
-🧬 02. SYSTEM SPECIFICATIONS (NEURAL STACK)
-<table align="center" style="border: 2px solid #00FF00; border-collapse: collapse; width: 100%;">
-<tr style="background-color: #0d1117; color: #00FF00;">
-<th style="padding: 12px; border: 1px solid #00FF00;">DOMAIN</th>
-<th style="padding: 12px; border: 1px solid #00FF00;">TECHNOLOGY</th>
-<th style="padding: 12px; border: 1px solid #00FF00;">TACTICAL PURPOSE</th>
-</tr>
-<tr>
-<td style="padding: 10px; border: 1px solid #00FF00; background-color: #161b22;"><b>Framework</b></td>
-<td style="padding: 10px; border: 1px solid #00FF00;">Next.js 15 (App Router)</td>
-<td>High-Speed Server-Side Rendering (SSR)</td>
-</tr>
-<tr>
-<td style="padding: 10px; border: 1px solid #00FF00; background-color: #161b22;"><b>Intelligence</b></td>
-<td style="padding: 10px; border: 1px solid #00FF00;">NLP / Agentic Frameworks</td>
-<td>Semantic search & automated lead nurturing</td>
-</tr>
-<tr>
-<td style="padding: 10px; border: 1px solid #00FF00; background-color: #161b22;"><b>Styling</b></td>
-<td style="padding: 10px; border: 1px solid #00FF00;">TailwindCSS 4.x</td>
-<td>Utility-first responsive aesthetic</td>
-</tr>
-<tr>
-<td style="padding: 10px; border: 1px solid #00FF00; background-color: #161b22;"><b>Dynamics</b></td>
-<td style="padding: 10px; border: 1px solid #00FF00;">Framer Motion 12.x</td>
-<td>Fluid state transitions and UI feedback</td>
-</tr>
-</table>
-
-🤖 03. ORCHESTRATED AGENTIC FEATURES & NLP
-
-PickAHouse leverages an Advanced Intelligence Layer designed to transform the real estate business model into an automated powerhouse:
-
-🧠 Semantic NLP Search: Moving beyond basic filters. Users interact via a "Neural Search" bar that understands intent (e.g., "Find me a secure 4-bedroom villa in Maitama with smart home features").
-
-🕵️‍♂️ Autonomous Agent Nodes: The platform is architected to deploy AI Search Agents that continuously monitor the market, match user preferences, and execute autonomous notifications.
-
-💬 Multi-Channel Messenger: Integrated UI for WhatsApp, FB Messenger, and Twitter, designed to be handled by LLM-driven Agent Brokers.
-
-📥 04. LOCAL DEPLOYMENT PROTOCOL
-
-Execute these commands to initialize the tactical frontend:
-
-code
-Bash
-download
-content_copy
-expand_less
-# 1. Clone the secure source
-git clone https://github.com/your-repo/pickahouse.git
-
-# 2. Access the root directory
-cd pickahouse
-
-# 3. Secure dependency injection
-pnpm install
-
-# 4. Initialize Local Neural Server
-npm run dev
-
-Access the terminal at http://localhost:3000
-
-🗺️ 05. STRATEGIC ROADMAP (AAA EVOLUTION)
-<table align="center" style="border: 2px solid #38B2AC; width: 100%;">
-<tr style="background-color: #1a202c; color: #fff;">
-<th style="padding: 10px;">PHASE</th>
-<th style="padding: 10px;">OBJECTIVE</th>
-<th style="padding: 10px;">STATUS</th>
-</tr>
+[
+  {
+    "file_name": "README.md",
+    "theme": "Cyber-Ops & AI Automation Agency (AAA)",
+    "author": "Oluwaseun Lawal",
+    "content": "<div align=\"center\">\n\n# 🛡️ 🧱 <br> **P I C K A H O U S E** <br> ⚡ *THE NEURAL REAL ESTATE PROTOCOL* ⚡\n\n### **[ ARCHITECT: OLUWASEUN LAWAL ]**\n**`BUSINESS DEVELOPMENT × CYBER SECURITY × AI ORCHESTRATION`**\n\n[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/oluwaseun-lawal)\n[![Email](https://img.shields.io/badge/EMAIL-cyberlawaltech%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cyberlawaltech@gmail.com)\n[![Status](https://img.shields.io/badge/AGENCY_STATUS-ACTIVE_NODE-00FF00?style=for-the-badge)](https://github.com/oluwaseun-lawal)\n\n---\n\n</div>\n\n<div align=\"justify\" style=\"border: 4px solid #38B2AC; padding: 25px; background-color: #0d1117; border-radius: 15px;\">\n\n# 📡 01. MISSION BRIEFING: THE AI AGENCY REVOLUTION\n\nWelcome to **PickAHouse**, a high-fidelity real estate orchestration protocol engineered for the Abuja Premier Estates segment. This is not just a listing platform; it is a **Tier-4 AI Automated Agency (AAA)** deployment. By leveraging deep **Neural Search** and autonomous agentic workflows, we have decimated the friction between high-net-worth investors and their asset acquisitions. The platform serves as a blueprint for modern business development—where the software isn't just a tool, but a self-evolving brokerage node.\n\n</div>\n\n<br>\n\n<div align=\"justify\" style=\"border: 4px solid #FF007F; padding: 25px; background-color: #0d1117; border-radius: 15px;\">\n\n# 🤖 02. NLP & AGENTIC WORKFLOW ORCHESTRATION\n\nThis system's heartbeat is powered by **Agentic Orchestration**. We've outcasted the traditional search bar in favor of a **Natural Language Processing (NLP)** interface. Our agents don't just find houses—they analyze market sentiment, simulate ROI, and execute autonomous lead nurturing.\n\n*   🧠 **SEMANTIC INTENT EXTRACTION:** Using custom NLP pipelines to understand luxury requirements (e.g., \"Penthouse with specific Gbagada accessibility and off-grid power\").\n*   🕵️ **ORCHESTRATED BROKER NODES:** Self-operating agents that handle inquiries across WhatsApp, Email, and Twitter without human intervention.\n*   🛡️ **CYBER-HARDENED DATA GATES:** Every piece of lead information is treated as high-value intelligence, protected by strict validation and zero-trust protocols.\n\n</div>\n\n<br>\n\n<div align=\"center\">\n\n# 🛠️ 03. SYSTEM TECHNICAL BLUEPRINT\n\n| LAYER | COMPONENT | MISSION STATUS |\n| :--- | :--- | :--- |\n| **Runtime** | Next.js 15+ (App Router) | 🟢 FULL DEPLOYMENT |\n| **Intelligence** | NLP Agentic Engine (OpenAI API) | 🧪 ALPHA TESTING |\n| **Aesthetics** | TailwindCSS 4.x / Framer Motion 12 | ✨ LUXURY PROTOCOL |\n| **Persistence** | PostgreSQL (Supabase Architecture) | 🔴 PENDING MIGRATION |\n| **Verification** | Zod / Strict TypeScript 5 | 🛡️ SECURITY ACTIVE |\n\n</div>\n\n<br>\n\n<div align=\"justify\" style=\"border: 4px solid #FFD700; padding: 25px; background-color: #0d1117; border-radius: 15px;\">\n\n# 📥 04. INSTALLATION & NEURAL INITIALIZATION\n\nTo clone this repository into your localized operational environment, execute the following encrypted sequence:\n\n```bash\n# CLONE SECURE SOURCE\ngit clone https://github.com/oluwaseun-lawal/PickAHouse.git\n\n# ENTER THE NODE\ncd PickAHouse\n\n# SECURE DEPENDENCY INJECTION\npnpm install\n\n# LAUNCH TACTICAL FRONTEND\nnpm run dev\n```\n\n</div>\n\n<br>\n\n<div align=\"center\">\n\n# 🗺️ 05. DEVELOPMENT TRAJECTORY\n\n```mermaid\ngraph LR\n  A[Frontend Matrix] --> B[Neural Search Ops]\n  B --> C[Agentic Auth System]\n  C --> D[ROI Prediction Logic]\n```\n\n- [x] **PHASE 1:** UI/UX Matrix for High-Tier Property Grid and Admin Dashboard.\n- [ ] **PHASE 2:** Backend API integration & JWT Route Protection Protocols.\n- [ ] **PHASE 3:** Agentic Bot Integration for 24/7 Automated Brokerage Assistance.\n\n</div>\n\n<br>\n\n<div align=\"center\" style=\"border: 4px solid #0077B5; padding: 20px; border-radius: 15px;\">\n\n# 🤝 06. ARCHITECT ACCESS & CONSULTATION\n\n**Oluwaseun Lawal** specializes in architecting AI Automated Agencies that secure market share through technical dominance.\n\n| CHANNEL | RESOURCE | ACTION |\n| :--- | :--- | :--- |\n| 🟦 **LINKEDIN** | [oluwaseun-lawal](https://www.linkedin.com/in/oluwaseun-lawal) | [FOLLOW THE JOURNEY] |\n| 📧 **EMAIL** | [cyberlawaltech@gmail.com](mailto:cyberlawaltech@gmail.com) | [OPEN COMMUNICATION] |\n| 🛡️ **STATUS** | Security / AI Research | [AVAILABLE FOR CONTRACT] |\n\n<br>\n\n--- \n**PROTOCOL END | AUTHENTICATED ACCESS ONLY** \n`Cyber Security | AI Automation | Real Estate Intelligence` \n</div>"
+  }
+]</tr>
 <tr>
 <td><b>P1: SECURITY</b></td>
 <td>JWT Auth, RBAC implementation, & Route Hardening.</td>
