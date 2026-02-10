@@ -3,7 +3,6 @@
 import type React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useSearchParams } from "next/navigation"
 import { Suspense } from "react"
 import {
   LayoutDashboard,
@@ -47,7 +46,6 @@ const adminNavItems = [
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  const searchParams = useSearchParams()
 
   return (
     <SidebarProvider>
